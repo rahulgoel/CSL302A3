@@ -1,0 +1,9 @@
+[("hello",2);("there",7);("yacc",0)];;
+Node("hello",[ X "s" ; X "s"] )
+wellformed (Node("hello",[ X (S "s") ; Node("there",[X (S "y");X (S "y");X(S "y")])] )) ([("hello",2);("there",7);("yacc",0)]);;
+subst ( Node("hello",[ X (S "s") ; X (S "h")]) , ("s" , X ( I 5)) );;
+subst ( Node("hello",[ X (S "s") ; Node("there",[X (S "y");X (S "y");X(S "y")])] ) , ("s" , X ( I 5)) );;
+wellformed (Node("hello",[ X (S "s") ; Node("there",[X (S "y");X (S "y");X(S "y")])] ), ([("hello",2);("there",7);("yacc",0)]));;
+
+wellformed (Node("hello",[ X (S "s") ; Node("there",[X (S "y");X (S "y");X(S "y")])] ), ([("hello",2);("there",7);("yacc",0)]));;
+

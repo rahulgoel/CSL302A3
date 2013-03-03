@@ -1,0 +1,26 @@
+
+
+Title         Assignment 3: Terms and substitutions
+Due         11 Mar, 2013 5:00 pm
+Status         Not Started
+Grade Scale         Points (max 10.0)
+Instructions
+In this assignment, you will code terms, substitutions and unifiers.
+
+1.  Define an ocaml  data type preterm which can represent terms of any
+given signature.
+2.  Given a signature as a (string*int) list, where strings stand for
+symbols and the ints for their arity, write a function sigok that checks
+that the signature is a valid signature (no negative arities,  no symbol
+repeated, especially with different arities).
+3.  Define a function wellformed that given a valid signature, checks
+whether a given preterm is indeed a well-formed term with respect to that
+signature (aritiy is repsected for each occurrence of a symbol).
+
+4. Give an efficient ocaml representation for substitutions.
+5.  Define a function subst that given a term t and a substitution s,
+returns the term obtained by applying substitution s to term t.
+
+6.  Define a function mgu that given two terms, returns a most general
+unifier of the two terms if  a unifier exists, and raises an exception
+otherwise.

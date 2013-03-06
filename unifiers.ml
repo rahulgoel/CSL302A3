@@ -86,18 +86,18 @@ let rec mgu t1 t2 listu =
 									
 	match t2 with 
 	| X (I i) -> match t1 with 
-							| X ( I j) -> if (i =j) then [( X( I j),"I dont care"  )]
+							| X ( I j) -> if (i =j) then [( "I dont care" ,X( I j) )]
 														else  raise E
-							| X ( S x) -> listu@[(X (I i),x)]
+							| X ( S x) -> listu@[(x,X (I i))]
 							| Node(str,list) -> raise E
 	| X ( S s) -> match t1 with
-							| X ( I j ) -> listu@[(X (I j) ,s)]
-							| X ( S x) -> listu@[( X ( S s) , x)]
-							| Node(str,list) ->if ( (isx s t1) = false)  then listu@[( Node(str,list) ,s)]													
+							| X ( I j ) -> listu@[(s,X (I j) )]
+							| X ( S x) -> listu@[(x, X ( S s) )]
+							| Node(str,list) ->if ( (isx s t1) = false)  then listu@[(s, Node(str,list) )]													
 																	else raise E
 	| Node(str,list) -> match t1 with																			
 	            | X ( I j) -> raise E
-							| X ( S x) -> if ( (isx s t1) = false)  then listu@[( Node(str,list) ,x)]	
+							| X ( S x) -> if ( (isx s t1) = false)  then listu@[( x,Node(str,list))]	
 														else raise E
 							|	Node(str1,list1) -> if(str1=str && (List.length list= List.length list1) ) then 
 																										(*for i = i to List.length list do*)

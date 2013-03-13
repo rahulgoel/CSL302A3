@@ -7,3 +7,12 @@ wellformed (Node("hello",[ X (S "s") ; Node("there",[X (S "y");X (S "y");X(S "y"
 
 wellformed (Node("hello",[ X (S "s") ; Node("there",[X (S "y");X (S "y");X(S "y")])] ), ([("hello",2);("there",7);("yacc",0)]));;
 
+mgu (Node("hello",[ X (S "s") ; X (S "s")] ))  (Node("hello",[ X (S "s") ; X (S "s")] )) [] ;; 
+isx "z" (Node ("hello",[ X (S "s") ; Node("there",[X (S "y");X (S "y");X(S "z")]  )  ] ));;
+mgulist [X (S "s") ; X (S "h")] [X (I 6) ; X (I 7)] [];;
+mgu X(S "s") X (I 5) [];;
+mgu (X(S "s")) (X (S "w")) [];;
+mgu  (X (I 5)) (Node("S",[])) [];;
+mgu (Node("hello",[ X (S "s") ; X (S "s")] ))  (Node("hello",[ X (I 5) ; X (S "s")] )) [] ;;
+mgu (Node("hello",[ X (S "s") ; X (S "s")] ))  (X(I 5)) [] ;;
+mgu (Node("hello",[ X (S "s") ; Node("hello",[ X (I 5) ; X (S "s")] )] ))  (X (S "w")) [] ;;
